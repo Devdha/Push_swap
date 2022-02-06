@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"command.h": "c",
+		"algorithm": "c",
+		"random": "c"
+	}
+}
