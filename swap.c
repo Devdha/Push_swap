@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:48:36 by dha               #+#    #+#             */
-/*   Updated: 2022/02/06 15:20:37 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/08 15:37:39 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	sb(t_list **b)
 	ft_lstdel_back(b);
 	ft_lstdel_back(b);
 	ft_lstadd_back(b, last);
-	ft_lastadd_back(b, before);
+	ft_lstadd_back(b, before);
 }
 
 void	ss(t_list **a, t_list **b)

@@ -1,23 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 20:41:46 by dha               #+#    #+#             */
-/*   Updated: 2022/02/08 15:35:13 by dha              ###   ########seoul.kr  */
+/*   Created: 2022/02/07 15:54:54 by dha               #+#    #+#             */
+/*   Updated: 2022/02/08 13:38:05 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	check_input(const char *s, t_list **a)
+{
+	
+}
+
+void	str_input(const char *s, t_list **a)
+{
+	char	**split;
+	int		i;
+
+	split = ft_split(s, ' ');
+	while (split[i] != NULL)
+		check_input(split[i], a);
+	
+}
+
+t_list	*input(int argc, char **argv)
 {
 	t_list	*a;
-	t_list	*b;
-
-	if (argc < 2)
-		return (0);
+	int		i;
 	
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strchr(argv[i], ' '))
+			str_input(argv[i], &a);
+		else
+			check_input(argv[i], &a);
+	}
 }
