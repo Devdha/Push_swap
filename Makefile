@@ -6,7 +6,7 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 13:38:28 by dha               #+#    #+#              #
-#    Updated: 2022/02/08 16:14:28 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/08 18:17:40 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ all : $(NAME)
 
 $(NAME) : $(LIBFT) $(OBJS)
 	@$(CC) $(CFLAGS) -I ./ $(OBJS) -L $(LIBFT_DIR) -l$(LIBFT_NAME) -o $@
+	@printf "💡Make $(NAME) Done\n"
 	
 clean :
 	@$(RM) $(OBJ_DIR)
@@ -41,11 +42,13 @@ wclean : fclean $(LIBFT_NAME)_fclean
 
 re : fclean all
 
+rr : wclean all
+
 $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean wclean re rr $(LIBFT_NAME)_clean $(LIBFT_NAME)_fclean
 
 $(LIBFT) :
 	@make -C $(LIBFT_DIR)

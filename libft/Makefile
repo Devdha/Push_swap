@@ -6,9 +6,13 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 20:59:53 by dha               #+#    #+#              #
-#    Updated: 2022/02/08 16:12:25 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/08 18:17:33 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
+
+SHELL = /bin/bash
+SP = -\|
+IDX = 0
 
 SRCS = ft_isascii.c ft_putchar_fd.c ft_strchr.c ft_strlen.c ft_substr.c ft_atoi.c \
 	ft_isdigit.c ft_memchr.c ft_strdup.c ft_strmapi.c ft_tolower.c ft_bzero.c ft_isprint.c \
@@ -26,16 +30,24 @@ NAME = libft.a
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	ar rcs $@ $^
+	@ar rcs $@ $^
+	@printf "\b✅ \n💡Make $(NAME) Done\n"
 
 %.o : %.c
-	$(CC) $(CFLAGS) $< -o $@
+	$(eval IDX = $(shell expr $(IDX) + 1))
+	$(eval T_IDX = $(shell expr $(IDX) % 2 + 1))
+	$(eval CHR = $(shell echo -n $(SP) | cut -c $(T_IDX)))
+	@if [ $(IDX) = 1 ]; then echo -n "🛠 Compiling ...  "; fi
+	@printf "\b$(CHR)"
+	@$(CC) $(CFLAGS) $< -o $@
 
 clean :
 	@$(RM) $(OBJS)
+	@echo "🗑 Remove $(NAME)'s OBJs Done"
 
 fclean : clean
 	@$(RM) $(NAME)
+	@echo "🗑 Remove $(NAME) Done"
 
 $(OBJS) : $(SRCS) libft.h
 
