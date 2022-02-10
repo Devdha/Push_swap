@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:41:46 by dha               #+#    #+#             */
-/*   Updated: 2022/02/08 15:35:13 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/10 21:17:00 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	
+	a = input(argc, argv);
+	system("leaks push_swap");
 }
