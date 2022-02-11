@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:54:54 by dha               #+#    #+#             */
-/*   Updated: 2022/02/10 21:08:23 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/11 17:46:16 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,20 @@ static void	check_input(const char *s, t_list **a)
 
 static void	str_input(const char *s, t_list **a)
 {
-	char	**split;
+	char	**sp;
 	int		i;
 
-	split = ft_split(s, ' ');
-	while (split[i] != NULL)
-		check_input(split[i], a);
-	free(split);
+	i = 0;
+	sp = ft_split(s, ' ');
+	if (!sp)
+		exit(EXIT_FAILURE);
+	while (sp[i] != NULL)
+	{
+		check_input(sp[i], a);
+		free(sp[i]);
+		i++;
+	}
+	free(sp);
 }
 
 t_list	*input(int argc, char **argv)

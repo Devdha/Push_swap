@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 20:39:17 by dha               #+#    #+#             */
-/*   Updated: 2022/02/11 17:35:39 by dha              ###   ########seoul.kr  */
+/*   Created: 2022/02/11 17:33:06 by dha               #+#    #+#             */
+/*   Updated: 2022/02/11 17:35:48 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft/libft.h"
-# include "command.h"
-# include <stdio.h>
+#include "push_swap.h"
 
-t_list	*input(int argc, char **argv);
-int		is_sorted(t_list *lst);
-
-#endif
+int	is_sorted(t_list *lst)
+{
+	while (lst->next)
+	{
+		if (*(int *) lst->content > *(int *) lst->next->content)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}

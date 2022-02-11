@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:38:28 by dha               #+#    #+#             */
-/*   Updated: 2022/02/10 17:00:21 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/11 16:21:28 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,12 @@ long long	ft_atoll(const char *str)
 	{
 		if (*str < '0' || *str > '9')
 			break ;
-		if (sign > 0)
-			tot = tot * 10 + (*str - '0');
-		else
-			tot = tot * 10 - (*str - '0');
-		str++;
+		if (tot > 922337203685477581 || tot < -922337203685477581)
+			return (-1);
+		tot = tot * 10 + (*str - '0') * sign;
 		if ((sign > 0 && tot < 0) || (sign < 0 && tot > 0))
 			return (-1);
+		str++;
 	}
 	return (tot);
 }
