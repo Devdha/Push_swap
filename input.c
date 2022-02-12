@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:54:54 by dha               #+#    #+#             */
-/*   Updated: 2022/02/11 17:46:16 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/11 21:34:23 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ t_list	*input(int argc, char **argv)
 	int		i;
 
 	i = 1;
+	a = NULL;
 	while (i < argc)
 	{
 		if (ft_strchr(argv[i], ' '))

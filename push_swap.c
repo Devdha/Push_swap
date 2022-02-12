@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:41:46 by dha               #+#    #+#             */
-/*   Updated: 2022/02/11 16:27:41 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/12 19:50:05 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ int	main(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 
+	b = NULL;
 	if (argc < 2)
 		return (0);
 	a = input(argc, argv);
-	ps(&a, &b);
+	if (is_sorted(a))
+		return (0);
+	//push_swap(&a, &b);
 	system("leaks push_swap");
 }

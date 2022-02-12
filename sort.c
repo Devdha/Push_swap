@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 20:39:17 by dha               #+#    #+#             */
-/*   Updated: 2022/02/12 19:48:16 by dha              ###   ########seoul.kr  */
+/*   Created: 2022/02/11 21:39:00 by dha               #+#    #+#             */
+/*   Updated: 2022/02/12 19:39:49 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft/libft.h"
-# include "command.h"
-# include <stdio.h>
+#include "push_swap.h"
 
-typedef struct s_pair
+void	quick_sort(t_list **a, t_list **b)
 {
-	int	left;
-	int	right;
-}				t_pair;
+	
+}
 
-t_list	*input(int argc, char **argv);
-int		is_sorted(t_list *lst);
-t_pair	get_pivot(t_list *lst);
+void	push_swap(t_list **a, t_list **b)
+{
+	int	size;
 
-#endif
+	size = ft_lstsize(*a);
+	
+}

@@ -6,7 +6,7 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 13:38:28 by dha               #+#    #+#              #
-#    Updated: 2022/02/10 19:52:03 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/12 19:49:32 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,15 @@ LIBFT_DIR = ./libft
 LIBFT_NAME = ft
 LIBFT = $(LIBFT_DIR)/lib$(LIBFT_NAME).a
 
-SRCS = push_swap.c input.c pass.c swap.c rotate.c revrotate.c
+SRCS = push_swap.c \
+		push_swap_utils.c \
+		input.c \
+		pivot.c \
+		sort.c \
+		pass.c \
+		swap.c \
+		rotate.c \
+		revrotate.c
 OBJ_DIR = ./obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
