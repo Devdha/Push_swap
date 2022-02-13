@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:39:17 by dha               #+#    #+#             */
-/*   Updated: 2022/02/12 19:48:16 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/13 14:18:52 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_pair
 
 t_list	*input(int argc, char **argv);
 int		is_sorted(t_list *lst);
-t_pair	get_pivot(t_list *lst);
+int		lst_value(t_list *lst);
+int		lst_max(t_list *lst);
+t_pair	get_pivot(t_list *lst, int size);
 
 #endif

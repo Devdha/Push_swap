@@ -6,7 +6,7 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 13:38:28 by dha               #+#    #+#              #
-#    Updated: 2022/02/12 21:37:44 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/13 14:02:02 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,11 @@ SRCS = push_swap.c \
 		input.c \
 		pivot.c \
 		sort.c \
-		pass.c \
-		swap.c \
-		rotate.c \
-		revrotate.c
+		lst_utils.c \
+		com_pass.c \
+		com_swap.c \
+		com_rotate.c \
+		com_revrotate.c
 INCS = push_swap.h \
 		command.h
 OBJ_DIR = ./obj

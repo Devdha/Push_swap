@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:01:32 by dha               #+#    #+#             */
-/*   Updated: 2022/02/12 19:31:21 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/13 14:19:05 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,26 +53,24 @@ static void	merge_sort(int *arr, int start, int end)
 	merge(arr, start, end, mid);
 }
 
-t_pair	get_pivot(t_list *lst)
+t_pair	get_pivot(t_list *lst, int size)
 {
 	t_pair	pivot;
-	int		size;
 	int		*arr;
 	int		i;
 
-	size = ft_lstsize(lst);
 	arr = (int *) malloc(sizeof(int) * size);
 	if (!arr)
 		exit(EXIT_FAILURE);
 	i = 0;
-	while (lst)
+	while (lst && i < size)
 	{
-		arr[i++] = *(int *) lst->content;
+		arr[i++] = lst_value(lst);
 		lst = lst->next;
 	}
 	merge_sort(arr, 0, size);
-	pivot.left = arr[size / 3 - 1];
-	pivot.right = arr[size * 2 / 3 - 1];
+	pivot.left = arr[size / 3];
+	pivot.right = arr[size * 2 / 3];
 	free(arr);
 	return (pivot);
 }
