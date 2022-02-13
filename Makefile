@@ -6,7 +6,7 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 13:38:28 by dha               #+#    #+#              #
-#    Updated: 2022/02/12 19:49:32 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/12 21:37:44 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,14 @@ SRCS = push_swap.c \
 		swap.c \
 		rotate.c \
 		revrotate.c
+INCS = push_swap.h \
+		command.h
 OBJ_DIR = ./obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all : $(NAME)
 
-$(NAME) : $(LIBFT) $(OBJS)
+$(NAME) : $(LIBFT) $(OBJS) $(INCS)
 	@$(CC) $(CFLAGS) -I ./ $(OBJS) -L $(LIBFT_DIR) -l$(LIBFT_NAME) -o $@
 	@printf "💡Make $(NAME) Done\n"
 	
