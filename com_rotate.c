@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   com_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:48:35 by dha               #+#    #+#             */
-/*   Updated: 2022/02/10 21:01:35 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/13 15:26:26 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ra(t_list **a)
 
 	if (!*a || !(*a)->next)
 		return ;
-	first = ft_lstlast(*a);
+	first = *a;
 	ft_lstdel_front(a);
 	ft_lstadd_back(a, first);
 }
@@ -29,7 +29,7 @@ void	rb(t_list **b)
 
 	if (!*b || !(*b)->next)
 		return ;
-	first = ft_lstlast(*b);
+	first = *b;
 	ft_lstdel_front(b);
 	ft_lstadd_back(b, first);
 }

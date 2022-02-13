@@ -6,11 +6,16 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:41:46 by dha               #+#    #+#             */
-/*   Updated: 2022/02/13 14:12:51 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/13 16:26:05 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	v(void *a)
+{
+	printf("%d\n", *(int *) a);
+}
 
 int	main(int argc, char **argv)
 {
@@ -24,5 +29,9 @@ int	main(int argc, char **argv)
 	a = input(argc, argv);
 	if (is_sorted(a))
 		return (0);
+	push_swap(&a, &b);
+	ft_lstiter(a, v);
+	printf("--------\n");
+	ft_lstiter(b, v);
 	system("leaks push_swap");
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pass.c                                             :+:      :+:    :+:   */
+/*   com_pass.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:48:31 by dha               #+#    #+#             */
-/*   Updated: 2022/02/10 21:07:43 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/13 16:17:24 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,22 @@
 
 void	pa(t_list **a, t_list **b)
 {
+	t_list	*front;
+
 	if (!*b)
 		return ;
-	ft_lstadd_front(a, *b);
+	front = *b;
 	ft_lstdel_front(b);
+	ft_lstadd_front(a, front);
 }
 
 void	pb(t_list **a, t_list **b)
 {
+	t_list	*front;
+	
 	if (!*a)
 		return ;
-	ft_lstadd_front(b, *a);
+	front = *a;
 	ft_lstdel_front(a);
+	ft_lstadd_front(b, front);
 }
