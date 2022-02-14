@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:39:17 by dha               #+#    #+#             */
-/*   Updated: 2022/02/13 15:14:59 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/14 15:43:20 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ t_call	init_call(void);
 void	push_swap(t_list **a, t_list **b);
 void	a_to_b(int size, t_list **a, t_list **b);
 void	b_to_a(int size, t_list **a, t_list **b);
+void	opt_rrr(t_call call, t_list **a, t_list **b);
 
 #endif

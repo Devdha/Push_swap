@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:48:31 by dha               #+#    #+#             */
-/*   Updated: 2022/02/13 16:17:24 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/14 15:45:39 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	pa(t_list **a, t_list **b)
 void	pb(t_list **a, t_list **b)
 {
 	t_list	*front;
-	
+
 	if (!*a)
 		return ;
 	front = *a;

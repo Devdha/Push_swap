@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 21:39:00 by dha               #+#    #+#             */
-/*   Updated: 2022/02/13 18:06:23 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/14 15:46:53 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,42 +72,29 @@ void	b_to_a(int size, t_list **a, t_list **b)
 	int		i;
 
 	if (size < 3)
+	{
+		i = 0;
+		while (i++ < size)
+			pa(a, b);
 		return ;
-	i = 0;
+	}
 	call = init_call();
 	b_to_a_2(size, a, b, &call);
-	while (i < call.ra && i < call.rb)
-	{
-		rrr(a, b);
-		i++;
-	}
-	if (i < call.ra)
-		ra(a);
-	else if (i < call.rb)
-		rb(b);
-	a_to_b(call.ra, a ,b);
+	a_to_b(call.pa - call.ra, a, b);
+	opt_rrr(call, a, b);
+	a_to_b(call.ra, a, b);
 	b_to_a(call.rb, a, b);
 }
 
 void	a_to_b(int size, t_list **a, t_list **b)
 {
 	t_call	call;
-	int		i;
 
-	if (size < 3 || is_sorted(*a))
+	if (size < 3)
 		return ;
-	i = 0;
 	call = init_call();
 	a_to_b_2(size, a, b, &call);
-	while (i < call.ra && i < call.rb)
-	{
-		rrr(a, b);
-		i++;
-	}
-	if (i < call.ra)
-		rra(a);
-	else if (i < call.rb)
-		rrb(b);
+	opt_rrr(call, a, b);
 	a_to_b(call.ra, a, b);
 	b_to_a(call.rb, a, b);
 	b_to_a(call.pb - call.rb, a, b);

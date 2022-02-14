@@ -6,7 +6,7 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 13:38:28 by dha               #+#    #+#              #
-#    Updated: 2022/02/13 14:02:02 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/14 13:46:02 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS = push_swap.c \
 		input.c \
 		pivot.c \
 		sort.c \
+		optimization.c \
 		lst_utils.c \
 		com_pass.c \
 		com_swap.c \
