@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 21:39:00 by dha               #+#    #+#             */
-/*   Updated: 2022/02/14 15:46:53 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/15 15:34:58 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,13 @@ void	b_to_a_2(int size, t_list **a, t_list **b, t_call *call)
 	while (i++ < size)
 	{
 		if (lst_value(*b) < pivot.left)
-		{
-			rb(b);
-			call->rb++;
-		}
+			call->rb += rb(b);
 		else
 		{
 			pa(a, b);
 			call->pa++;
 			if (lst_value(*a) < pivot.right)
-			{
-				ra(a);
-				call->ra++;
-			}
+				call->ra += ra(a);
 		}
 	}
 }
@@ -46,22 +40,17 @@ void	a_to_b_2(int size, t_list **a, t_list **b, t_call *call)
 
 	i = 0;
 	pivot = get_pivot(*a, size);
+	printf("%d %d", pivot.left, pivot.right);
 	while (i++ < size)
 	{
 		if (lst_value(*a) >= pivot.right)
-		{
-			ra(a);
-			call->ra++;
-		}
+			call->ra += ra(a);
 		else
 		{
 			pb(a, b);
 			call->pb++;
 			if (lst_value(*b) >= pivot.left)
-			{
-				rb(b);
-				call->rb++;
-			}
+				call->rb += rb(b);
 		}
 	}
 }
@@ -73,6 +62,8 @@ void	b_to_a(int size, t_list **a, t_list **b)
 
 	if (size < 3)
 	{
+		if (size == 2 && !is_sorted(*b, 2))
+			sb(b);
 		i = 0;
 		while (i++ < size)
 			pa(a, b);
@@ -91,7 +82,11 @@ void	a_to_b(int size, t_list **a, t_list **b)
 	t_call	call;
 
 	if (size < 3)
+	{
+		if (size == 2 && !is_sorted(*a, 2))
+			sa(a);
 		return ;
+	}
 	call = init_call();
 	a_to_b_2(size, a, b, &call);
 	opt_rrr(call, a, b);
@@ -102,5 +97,13 @@ void	a_to_b(int size, t_list **a, t_list **b)
 
 void	push_swap(t_list **a, t_list **b)
 {
-	a_to_b(ft_lstsize(*a), a, b);
+	//int	size;
+
+	//size = ft_lstsize(*a);
+	//if (size == 3)
+	//	three_sort(a, b);
+	//else if (size == 5)
+	//	five_sort(a, b);
+	//else
+		a_to_b(ft_lstsize(*a), a, b);
 }

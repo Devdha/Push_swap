@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:39:17 by dha               #+#    #+#             */
-/*   Updated: 2022/02/14 15:43:20 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/15 14:45:24 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,28 @@ typedef struct s_pair
 
 typedef struct s_call
 {
-	int pa;
-	int pb;
-	int ra;
-	int rb;
-	int rra;
-	int rrb;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rra;
+	int	rrb;
 }				t_call;
 
 t_list	*input(int argc, char **argv);
-int		is_sorted(t_list *lst);
+
+int		is_sorted(t_list *lst, int size);
 int		lst_value(t_list *lst);
 int		lst_max(t_list *lst);
-t_pair	get_pivot(t_list *lst, int size);
 t_call	init_call(void);
+
+t_pair	get_pivot(t_list *lst, int size);
 void	push_swap(t_list **a, t_list **b);
 void	a_to_b(int size, t_list **a, t_list **b);
 void	b_to_a(int size, t_list **a, t_list **b);
+
 void	opt_rrr(t_call call, t_list **a, t_list **b);
+void	three_sort(t_list **a, t_list **b);
+void	five_sort(t_list **a, t_list **b);
 
 #endif

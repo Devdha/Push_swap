@@ -6,19 +6,25 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 13:55:06 by dha               #+#    #+#             */
-/*   Updated: 2022/02/13 14:00:36 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/15 14:36:06 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_list *lst)
+int	is_sorted(t_list *lst, int size)
 {
-	while (lst->next)
+	int	i;
+
+	i = 0;
+	if (size == 0)
+		size = ft_lstsize(lst);
+	while (lst->next && i < size)
 	{
 		if (*(int *) lst->content > *(int *) lst->next->content)
 			return (0);
 		lst = lst->next;
+		i++;
 	}
 	return (1);
 }

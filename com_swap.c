@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   com_swap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:48:36 by dha               #+#    #+#             */
-/*   Updated: 2022/02/10 21:06:53 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/15 15:30:22 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	sa(t_list **a)
 	ft_lstdel_front(a);
 	ft_lstadd_front(a, top);
 	ft_lstadd_front(a, before);
+	ft_putendl_fd("sa", 0);
 }
 
 void	sb(t_list **b)
@@ -40,10 +41,12 @@ void	sb(t_list **b)
 	ft_lstdel_front(b);
 	ft_lstadd_front(b, top);
 	ft_lstadd_front(b, before);
+	ft_putendl_fd("sb", 0);
 }
 
 void	ss(t_list **a, t_list **b)
 {
 	sa(a);
 	sb(b);
+	ft_putendl_fd("ss", 0);
 }

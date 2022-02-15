@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:40:28 by dha               #+#    #+#             */
-/*   Updated: 2022/02/14 15:45:44 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/15 15:06:40 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,14 @@ void	opt_rrr(t_call call, t_list **a, t_list **b)
 		rrb(b);
 		i++;
 	}
+}
+
+void	three_sort(t_list **a, t_list **b)
+{
+	
+}
+
+void	five_sort(t_list **a, t_list **b)
+{
+	
 }
