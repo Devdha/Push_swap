@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:54:54 by dha               #+#    #+#             */
-/*   Updated: 2022/02/11 21:34:23 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 23:39:41 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	check_dup(t_list *a, long long num)
 {
 	while (a)
 	{
-		if (*(int *) a->content == num)
+		if (lst_value(a) == num)
 			return (1);
 		a = a->next;
 	}
@@ -32,7 +32,6 @@ static int	check_dup(t_list *a, long long num)
 static void	check_input(const char *s, t_list **a)
 {
 	long long	num;
-	t_list		*tmp;
 	int			*i;
 	int			len;
 

@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:39:17 by dha               #+#    #+#             */
-/*   Updated: 2022/02/18 21:05:43 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 23:24:16 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 # include "libft/libft.h"
 # include "command.h"
-# include <stdio.h>
 
 typedef struct s_pair
 {

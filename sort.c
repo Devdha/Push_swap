@@ -6,24 +6,11 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 21:39:00 by dha               #+#    #+#             */
-/*   Updated: 2022/02/18 21:29:40 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 23:17:07 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	check_lst(int pivot, int size, t_list *lst, int ascending)
-{
-	while (lst && size--)
-	{
-		if (ascending && lst_value(lst) < pivot)
-			return (0);
-		else if (!ascending && lst_value(lst) >= pivot)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
-}
 
 void	b_to_a_2(int size, t_list **a, t_list **b, t_call *call)
 {
@@ -34,9 +21,6 @@ void	b_to_a_2(int size, t_list **a, t_list **b, t_call *call)
 	pivot = get_pivot(*b, size);
 	while (i++ < size)
 	{
-		if (call->pa > size * 2 / 3 && \
-			check_lst(pivot.left, size - call->pb, *a, 0))
-			break ;
 		if (lst_value(*b) < pivot.left)
 			call->rb += rb(b);
 		else
@@ -44,15 +28,7 @@ void	b_to_a_2(int size, t_list **a, t_list **b, t_call *call)
 			pa(a, b);
 			call->pa++;
 			if (lst_value(*a) < pivot.right)
-			{
-				if (lst_value(*b) < pivot.left && i + 2 < size)
-				{
-					call->rr += rr(a, b);
-					i++;
-				}
-				else
-					call->ra += ra(a);
-			}
+				call->ra += ra(a);
 		}
 	}
 }
@@ -66,9 +42,6 @@ void	a_to_b_2(int size, t_list **a, t_list **b, t_call *call)
 	pivot = get_pivot(*a, size);
 	while (i++ < size)
 	{
-		if (call->pb > size * 2 / 3 && \
-			check_lst(pivot.right, size - call->pb, *a, 1))
-			break ;
 		if (lst_value(*a) >= pivot.right)
 			call->ra += ra(a);
 		else
@@ -76,15 +49,7 @@ void	a_to_b_2(int size, t_list **a, t_list **b, t_call *call)
 			pb(a, b);
 			call->pb++;
 			if (lst_value(*b) >= pivot.left)
-			{
-				if (lst_value(*a) >= pivot.right && i + 2 < size)
-				{
-					call->rr += rr(a, b);
-					i++;
-				}
-				else
-					call->rb += rb(b);
-			}
+				call->rb += rb(b);
 		}
 	}
 }
