@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:48:35 by dha               #+#    #+#             */
-/*   Updated: 2022/02/15 23:11:26 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/19 00:04:40 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,21 @@ int	rb(t_list **b)
 	return (1);
 }
 
-int	rr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b)
 {
 	t_list	*first;
 
-	if (!*a)
-		return (rb(b));
-	if (!*b)
-		return (ra(a));
-	first = *a;
-	ft_lstdel_front(a);
-	ft_lstadd_back(a, first);
-	first = *b;
-	ft_lstdel_front(b);
-	ft_lstadd_back(b, first);
+	if (*a)
+	{
+		first = *a;
+		ft_lstdel_front(a);
+		ft_lstadd_back(a, first);
+	}
+	if (*b)
+	{
+		first = *b;
+		ft_lstdel_front(b);
+		ft_lstadd_back(b, first);
+	}
 	ft_putendl_fd("rr", 1);
-	return (1);
 }

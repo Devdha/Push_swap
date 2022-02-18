@@ -6,7 +6,7 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 13:38:28 by dha               #+#    #+#              #
-#    Updated: 2022/02/18 23:32:28 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/19 00:06:38 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ all : $(NAME)
 
 $(NAME) : $(LIBFT) $(OBJS) $(INCS)
 	@$(CC) $(CFLAGS) -I ./ $(OBJS) -L $(LIBFT_DIR) -l$(LIBFT_NAME) -o $@
-	@printf "💡Make $(NAME) Done\n"
+	@printf "💡 Make $(NAME) Done\n"
 	
 clean :
 	@$(RM) $(OBJ_DIR)

@@ -6,7 +6,7 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 20:59:53 by dha               #+#    #+#              #
-#    Updated: 2022/02/10 19:37:14 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/19 00:07:14 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = ft_isascii.c ft_putchar_fd.c ft_strchr.c ft_strlen.c ft_substr.c ft_atoi.
 	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 	ft_lstdel_back.c ft_lstdel_front.c ft_lst_beforelast.c ft_atoll.c ft_numlen.c ft_isnum.c
 CC = gcc
-#CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
 
@@ -31,7 +31,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	@ar rcs $@ $^
-	@printf "\b✅ \n💡Make $(NAME) Done\n"
+	@printf "\b✅ \n💡 Make $(NAME) Done\n"
 
 %.o : %.c
 	$(eval IDX = $(shell expr $(IDX) + 1))
