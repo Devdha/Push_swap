@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 21:39:00 by dha               #+#    #+#             */
-/*   Updated: 2022/02/15 15:34:58 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 15:58:04 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	a_to_b_2(int size, t_list **a, t_list **b, t_call *call)
 
 	i = 0;
 	pivot = get_pivot(*a, size);
-	printf("%d %d", pivot.left, pivot.right);
 	while (i++ < size)
 	{
 		if (lst_value(*a) >= pivot.right)
@@ -58,14 +57,12 @@ void	a_to_b_2(int size, t_list **a, t_list **b, t_call *call)
 void	b_to_a(int size, t_list **a, t_list **b)
 {
 	t_call	call;
-	int		i;
 
 	if (size < 3)
 	{
-		if (size == 2 && !is_sorted(*b, 2))
+		if (size == 2 && !is_sorted(*b, 2, 0))
 			sb(b);
-		i = 0;
-		while (i++ < size)
+		while (size--)
 			pa(a, b);
 		return ;
 	}
@@ -83,7 +80,7 @@ void	a_to_b(int size, t_list **a, t_list **b)
 
 	if (size < 3)
 	{
-		if (size == 2 && !is_sorted(*a, 2))
+		if (size == 2 && !is_sorted(*a, 2, 1))
 			sa(a);
 		return ;
 	}
@@ -97,13 +94,13 @@ void	a_to_b(int size, t_list **a, t_list **b)
 
 void	push_swap(t_list **a, t_list **b)
 {
-	//int	size;
+	int	size;
 
-	//size = ft_lstsize(*a);
-	//if (size == 3)
-	//	three_sort(a, b);
-	//else if (size == 5)
-	//	five_sort(a, b);
-	//else
+	size = ft_lstsize(*a);
+	if (size == 3)
+		three_sort(a);
+	else if (size == 5)
+		five_sort(a, b);
+	else
 		a_to_b(ft_lstsize(*a), a, b);
 }

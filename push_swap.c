@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:41:46 by dha               #+#    #+#             */
-/*   Updated: 2022/02/15 15:15:32 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 16:57:13 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	a = input(argc, argv);
-	if (is_sorted(a, 0))
+	if (is_sorted(a, 0, 1))
 		return (0);
 	push_swap(&a, &b);
-	ft_lstiter(a, v);
-	printf("--------\n");
-	ft_lstiter(b, v);
+	//ft_lstiter(a, v);
+	//printf("--------\n");
+	//ft_lstiter(b, v);
 }

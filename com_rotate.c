@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:48:35 by dha               #+#    #+#             */
-/*   Updated: 2022/02/15 15:31:57 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/15 23:11:26 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	ra(t_list **a)
 {
 	t_list	*first;
 
-	if (!*a || !(*a)->next)
+	if (!*a)
 		return (0);
 	first = *a;
 	ft_lstdel_front(a);
 	ft_lstadd_back(a, first);
-	ft_putendl_fd("ra", 0);
+	ft_putendl_fd("ra", 1);
 	return (1);
 }
 
@@ -29,18 +29,29 @@ int	rb(t_list **b)
 {
 	t_list	*first;
 
-	if (!*b || !(*b)->next)
+	if (!*b)
 		return (0);
 	first = *b;
 	ft_lstdel_front(b);
 	ft_lstadd_back(b, first);
-	ft_putendl_fd("rb", 0);
+	ft_putendl_fd("rb", 1);
 	return (1);
 }
 
-void	rr(t_list **a, t_list **b)
+int	rr(t_list **a, t_list **b)
 {
-	ra(a);
-	rb(b);
-	ft_putendl_fd("rr", 0);
+	t_list	*first;
+
+	if (!*a)
+		return (rb(b));
+	if (!*b)
+		return (ra(a));
+	first = *a;
+	ft_lstdel_front(a);
+	ft_lstadd_back(a, first);
+	first = *b;
+	ft_lstdel_front(b);
+	ft_lstadd_back(b, first);
+	ft_putendl_fd("rr", 1);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:39:17 by dha               #+#    #+#             */
-/*   Updated: 2022/02/15 14:45:24 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 15:37:49 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_call
 
 t_list	*input(int argc, char **argv);
 
-int		is_sorted(t_list *lst, int size);
+int		is_sorted(t_list *lst, int size, int ascending);
 int		lst_value(t_list *lst);
 int		lst_max(t_list *lst);
 t_call	init_call(void);
@@ -45,7 +45,7 @@ void	a_to_b(int size, t_list **a, t_list **b);
 void	b_to_a(int size, t_list **a, t_list **b);
 
 void	opt_rrr(t_call call, t_list **a, t_list **b);
-void	three_sort(t_list **a, t_list **b);
+void	three_sort(t_list **a);
 void	five_sort(t_list **a, t_list **b);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 13:55:06 by dha               #+#    #+#             */
-/*   Updated: 2022/02/15 14:36:06 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/15 16:52:59 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_list *lst, int size)
+int	is_sorted(t_list *lst, int size, int ascending)
 {
 	int	i;
 
@@ -21,10 +21,14 @@ int	is_sorted(t_list *lst, int size)
 		size = ft_lstsize(lst);
 	while (lst->next && i < size)
 	{
-		if (*(int *) lst->content > *(int *) lst->next->content)
-			return (0);
-		lst = lst->next;
-		i++;
+		{
+			if (ascending && lst_value(lst) > lst_value(lst->next))
+				return (0);
+			else if (!ascending && lst_value(lst) < lst_value(lst->next))
+				return (0);
+			lst = lst->next;
+			i++;
+		}
 	}
 	return (1);
 }
