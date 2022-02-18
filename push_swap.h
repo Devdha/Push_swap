@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:39:17 by dha               #+#    #+#             */
-/*   Updated: 2022/02/18 15:37:49 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 21:05:43 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ typedef struct s_call
 	int	pb;
 	int	ra;
 	int	rb;
-	int	rra;
-	int	rrb;
+	int	rr;
 }				t_call;
 
 t_list	*input(int argc, char **argv);

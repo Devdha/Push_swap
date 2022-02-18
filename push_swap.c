@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:41:46 by dha               #+#    #+#             */
-/*   Updated: 2022/02/18 16:57:13 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 20:27:12 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 void	v(void *a)
 {
 	printf("%d\n", *(int *) a);
+}
+
+void	push_swap(t_list **a, t_list **b)
+{
+	int	size;
+
+	size = ft_lstsize(*a);
+	if (size == 3)
+		three_sort(a);
+	else if (size == 5)
+		five_sort(a, b);
+	else
+		a_to_b(ft_lstsize(*a), a, b);
 }
 
 int	main(int argc, char **argv)

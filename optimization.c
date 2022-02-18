@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:40:28 by dha               #+#    #+#             */
-/*   Updated: 2022/02/18 16:56:09 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 21:06:02 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	opt_rrr(t_call call, t_list **a, t_list **b)
 	int	i;
 
 	i = 0;
+	while (call.rr--)
+		rrr(a, b);
 	while (i < call.ra && i < call.rb)
 	{
 		rrr(a, b);
@@ -77,7 +79,8 @@ void	five_sort(t_list **a, t_list **b)
 		else
 			ra(a);
 	}
-	three_sort(a);
+	if (!is_sorted(*a, 3, 1))
+		three_sort(a);
 	if (!is_sorted(*b, 2, 0))
 		sb(b);
 	pa(a, b);

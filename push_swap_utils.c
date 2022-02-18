@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:33:06 by dha               #+#    #+#             */
-/*   Updated: 2022/02/15 15:14:52 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/18 21:05:50 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_call	init_call(void)
 	call.pb = 0;
 	call.ra = 0;
 	call.rb = 0;
-	call.rra = 0;
-	call.rrb = 0;
+	call.rr = 0;
 	return (call);
 }
