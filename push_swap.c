@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:41:46 by dha               #+#    #+#             */
-/*   Updated: 2022/02/18 23:52:05 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/19 14:35:29 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	init_a_to_b_2(int size, t_list **a, t_list **b, t_call *call)
 	while (i++ < size)
 	{
 		if (lst_value(*a) >= pivot.right)
-			call->ra += ra(a);
+			call->ra += ra(a, 0);
 		else
 		{
-			pb(a, b);
+			pb(a, b, 0);
 			call->pb++;
 			if (lst_value(*b) < pivot.left)
-				call->rb += rb(b);
+				call->rb += rb(b, 0);
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:40:28 by dha               #+#    #+#             */
-/*   Updated: 2022/02/18 21:06:02 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/19 14:36:22 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ void	opt_rrr(t_call call, t_list **a, t_list **b)
 
 	i = 0;
 	while (call.rr--)
-		rrr(a, b);
+		rrr(a, b, 0);
 	while (i < call.ra && i < call.rb)
 	{
-		rrr(a, b);
+		rrr(a, b, 0);
 		i++;
 	}
 	while (i < call.ra)
 	{
-		rra(a);
+		rra(a, 0);
 		i++;
 	}
 	while (i < call.rb)
 	{
-		rrb(b);
+		rrb(b, 0);
 		i++;
 	}
 }
@@ -41,11 +41,11 @@ void	three_sort(t_list **a)
 	if (lst_value(*a) < lst_value((*a)->next))
 	{
 		if (lst_value(*a) > lst_value((*a)->next->next))
-			rra(a);
+			rra(a, 0);
 		else
 		{
-			rra(a);
-			sa(a);
+			rra(a, 0);
+			sa(a, 0);
 		}
 	}
 	else
@@ -54,14 +54,14 @@ void	three_sort(t_list **a)
 		{
 			if (lst_value((*a)->next) > lst_value((*a)->next->next))
 			{
-				ra(a);
-				sa(a);
+				ra(a, 0);
+				sa(a, 0);
 			}
 			else
-				ra(a);
+				ra(a, 0);
 		}
 		else
-			sa(a);
+			sa(a, 0);
 	}
 }
 
@@ -75,14 +75,14 @@ void	five_sort(t_list **a, t_list **b)
 	while (i++ < 5)
 	{
 		if (lst_value(*a) <= pivot.left)
-			pb(a, b);
+			pb(a, b, 0);
 		else
-			ra(a);
+			ra(a, 0);
 	}
 	if (!is_sorted(*a, 3, 1))
 		three_sort(a);
 	if (!is_sorted(*b, 2, 0))
-		sb(b);
-	pa(a, b);
-	pa(a, b);
+		sb(b, 0);
+	pa(a, b, 0);
+	pa(a, b, 0);
 }

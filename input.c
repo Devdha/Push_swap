@@ -6,13 +6,13 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:54:54 by dha               #+#    #+#             */
-/*   Updated: 2022/02/18 23:39:41 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/19 14:32:21 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	error_exit(void)
+void	error_exit(void)
 {
 	write(1, "Error\n", 6);
 	exit(EXIT_FAILURE);

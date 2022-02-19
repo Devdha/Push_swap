@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 00:42:38 by dha               #+#    #+#             */
-/*   Updated: 2022/02/10 16:57:19 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/19 14:45:56 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# define BUFFER_SIZE 4096
+# define BUFFER_SIZE 16
 
 typedef struct s_list
 {

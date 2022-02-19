@@ -6,13 +6,13 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:48:35 by dha               #+#    #+#             */
-/*   Updated: 2022/02/19 00:04:40 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/02/19 14:34:43 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "command.h"
 
-int	ra(t_list **a)
+int	ra(t_list **a, int is_checker)
 {
 	t_list	*first;
 
@@ -21,11 +21,12 @@ int	ra(t_list **a)
 	first = *a;
 	ft_lstdel_front(a);
 	ft_lstadd_back(a, first);
-	ft_putendl_fd("ra", 1);
+	if (!is_checker)
+		ft_putendl_fd("ra", 1);
 	return (1);
 }
 
-int	rb(t_list **b)
+int	rb(t_list **b, int is_checker)
 {
 	t_list	*first;
 
@@ -34,11 +35,12 @@ int	rb(t_list **b)
 	first = *b;
 	ft_lstdel_front(b);
 	ft_lstadd_back(b, first);
-	ft_putendl_fd("rb", 1);
+	if (!is_checker)
+		ft_putendl_fd("rb", 1);
 	return (1);
 }
 
-void	rr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b, int is_checker)
 {
 	t_list	*first;
 
@@ -54,5 +56,6 @@ void	rr(t_list **a, t_list **b)
 		ft_lstdel_front(b);
 		ft_lstadd_back(b, first);
 	}
-	ft_putendl_fd("rr", 1);
+	if (!is_checker)
+		ft_putendl_fd("rr", 1);
 }

@@ -6,7 +6,7 @@
 #    By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 13:38:28 by dha               #+#    #+#              #
-#    Updated: 2022/02/19 00:06:38 by dha              ###   ########seoul.kr   #
+#    Updated: 2022/02/19 13:36:15 by dha              ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -rf
 NAME = push_swap
+BONUS = checker
 
 LIBFT_DIR = ./libft
 LIBFT_NAME = ft
@@ -36,11 +37,28 @@ INCS = push_swap.h \
 OBJ_DIR = ./obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
+BONUS_SRCS = checker.c \
+			input.c \
+			lst_utils.c \
+			com_pass.c \
+			com_swap.c \
+			com_rotate.c \
+			com_revrotate.c
+BONUS_INCS = checker.h \
+			command.h
+BONUS_OBJS = $(addprefix $(OBJ_DIR)/, $(BONUS_SRCS:.c=.o))
+
 all : $(NAME)
+
+bonus : $(BONUS)
 
 $(NAME) : $(LIBFT) $(OBJS) $(INCS)
 	@$(CC) $(CFLAGS) -I ./ $(OBJS) -L $(LIBFT_DIR) -l$(LIBFT_NAME) -o $@
 	@printf "💡 Make $(NAME) Done\n"
+
+$(BONUS) : $(LIBFT) $(BONUS_OBJS) $(BONUS_INCS)
+	@$(CC) $(CFLAGS) -I ./ $(BONUS_OBJS) -L $(LIBFT_DIR) -l$(LIBFT_NAME) -o $@
+	@printf "💡 Make $(BONUS) Done\n"
 	
 clean :
 	@$(RM) $(OBJ_DIR)
@@ -48,6 +66,7 @@ clean :
 
 fclean : clean
 	@$(RM) $(NAME)
+	@$(RM) $(BONUS)
 	@echo "🗑 Remove $(NAME) Done"
 
 wclean : fclean $(LIBFT_NAME)_fclean

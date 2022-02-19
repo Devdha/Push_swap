@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 01:02:48 by dha               #+#    #+#             */
-/*   Updated: 2021/11/28 19:42:34 by dha              ###   ########.fr       */
+/*   Updated: 2022/02/19 14:42:09 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (tmp_s1[i] - tmp_s2[i]);
 		i++;
 	}
-	return (0);
+	return (tmp_s1[i] - tmp_s2[i]);
 }
