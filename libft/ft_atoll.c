@@ -31,7 +31,7 @@ long long	ft_atoll(const char *str)
 	while (is_space(*str))
 		str++;
 	if (*str == '-')
-			sign = -1;
+		sign = -1;
 	str += (*str == '-' || *str == '+');
 	while (*str != '\0')
 	{
