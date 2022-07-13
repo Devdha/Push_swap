@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 static int	is_space(char c)
 {
@@ -23,26 +24,23 @@ static int	is_space(char c)
 
 long long	ft_atoll(const char *str)
 {
-	long long	tot;
-	int			sign;
+	unsigned long	tot;
+	int				sign;
 
-	sign = 1;
 	tot = 0;
+	sign = 1 - ((*str == '-') << 1);
 	while (is_space(*str))
 		str++;
-	if (*str == '-')
-		sign = -1;
 	str += (*str == '-' || *str == '+');
-	while (*str != '\0')
+	while (*str >= '0' && *str <= '9')
 	{
-		if (*str < '0' || *str > '9')
-			break ;
-		if (tot > 922337203685477581 || tot < -922337203685477581)
-			return (-1);
-		tot = tot * 10 + (*str - '0') * sign;
-		if ((sign > 0 && tot < 0) || (sign < 0 && tot > 0))
-			return (-1);
+		if (tot > (unsigned long) LONG_MAX / 10 + (sign < 0))
+			return ((sign < 0) - 1);
+		tot = tot * 10;
+		if (tot > (unsigned long) LONG_MAX - (*str - '0') + (sign < 0))
+			return ((sign < 0) - 1);
+		tot += (*str - '0');
 		str++;
 	}
-	return (tot);
+	return (tot * sign);
 }
