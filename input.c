@@ -38,10 +38,13 @@ static void	check_input(const char *s, t_list **a)
 	len = ft_strlen(s);
 	len -= (s[0] == '-' || s[0] == '+');
 	num = ft_atoll(s);
+	// check str(s) is number and length of str and num are same.
 	if (!(ft_isnum(s) && len == ft_numlen(num)))
 		error_exit();
+	// overflow check
 	if (num > 2147483647 || num < -2147483648)
 		error_exit();
+	// duplication check
 	if (check_dup(*a, num))
 		error_exit();
 	i = (int *) malloc(sizeof(int));
