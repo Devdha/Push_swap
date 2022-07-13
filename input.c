@@ -39,6 +39,7 @@ static void	check_input(const char *s, t_list **a)
 	len -= (s[0] == '-' || s[0] == '+');
 	num = ft_atoll(s);
 	// check str(s) is number and length of str and num are same.
+	// ft_isnum() and ft_numlen is in ./libft
 	if (!(ft_isnum(s) && len == ft_numlen(num)))
 		error_exit();
 	// overflow check
