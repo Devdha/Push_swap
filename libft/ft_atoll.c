@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:38:28 by dha               #+#    #+#             */
-/*   Updated: 2022/02/11 16:21:28 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 20:22:50 by dha              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	is_space(char c)
 
 long long	ft_atoll(const char *str)
 {
-	unsigned long	tot;
+	long long	tot;
 	int				sign;
 
 	tot = 0;
@@ -34,10 +34,10 @@ long long	ft_atoll(const char *str)
 	str += (*str == '-' || *str == '+');
 	while (*str >= '0' && *str <= '9')
 	{
-		if (tot > (unsigned long) LONG_MAX / 10 + (sign < 0))
+		if (tot > (long long) LONG_MAX / 10 + (sign < 0))
 			return ((sign < 0) - 1);
 		tot = tot * 10;
-		if (tot > (unsigned long) LONG_MAX - (*str - '0') + (sign < 0))
+		if (tot > (long long) LONG_MAX - (*str - '0') + (sign < 0))
 			return ((sign < 0) - 1);
 		tot += (*str - '0');
 		str++;
