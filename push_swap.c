@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:41:46 by dha               #+#    #+#             */
-/*   Updated: 2022/02/19 14:35:29 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/07/14 16:46:04 by dha              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ void	push_swap(t_list **a, t_list **b)
 	int	size;
 
 	size = ft_lstsize(*a);
-	if (size == 3)
+	if (size == 2)
+		sa(a, 0);
+	else if (size == 3)
 		three_sort(a);
 	else if (size == 5)
 		five_sort(a, b);
