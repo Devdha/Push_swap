@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:54:54 by dha               #+#    #+#             */
-/*   Updated: 2022/02/19 14:32:21 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/07/14 16:41:44 by dha              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,17 @@ static void	str_input(const char *s, t_list **a)
 	int		i;
 
 	i = 0;
+	// check is string filled with space
+	while (s[i] == ' ' && s[i])
+		i++;
+	if (s[i] == '\0')
+		error_exit();
+	// split numbers
 	sp = ft_split(s, ' ');
 	if (!sp)
 		exit(EXIT_FAILURE);
+	i = 0;
+	// check and put numbers in t_list
 	while (sp[i] != NULL)
 	{
 		check_input(sp[i], a);
