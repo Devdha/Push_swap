@@ -61,8 +61,8 @@ static void	str_input(const char *s, t_list **a)
 	int		i;
 
 	i = 0;
-	// check is string filled with space
-	while (s[i] == ' ' && s[i])
+	// check, Is string filled with space
+	while (s[i] == ' ')
 		i++;
 	if (s[i] == '\0')
 		error_exit();
