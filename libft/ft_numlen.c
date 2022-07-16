@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:36:10 by dha               #+#    #+#             */
-/*   Updated: 2022/02/10 16:47:44 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/07/16 17:06:38 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ int	ft_numlen(long long n)
 	if (n == 0)
 		return (1);
 	len = 0;
-	while (n != 0)
+	while (n != 0 && (n >= 10 || n <= -10))
 	{
 		len++;
 		n /= 10;
 	}
+	len++;
 	return (len);
 }
